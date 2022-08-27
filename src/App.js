@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import User from './User';
+import UserEmployee from './UserEmployee';
+import MyAPI from './MyAPI';
+import MyDataClass from './MyDataClass';
+import DataTest from './DataTest';
+import DataProps from './DataProps';
+import MyAnotherExample from './MyAnotherExample';
+import UserInfo from './UserInfo';
 
 function App() {
+
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <UserInfo></UserInfo>
+  
     </div>
   );
 }
