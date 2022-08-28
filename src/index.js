@@ -18,6 +18,7 @@ import MyHome from './MyHome';
 import MyReducerData from './MyReducerData';
 import MyMemoSource from './MyMemoSource';
 import ShowMoreTextToggle from './ShowMoreTextToggle';
+import DataUseRef from './DataUseRef';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,7 +39,12 @@ root.render(
 
    
     <Route path='/mymemo' element={<MyMemoSource/>} />
+
+    <Route path='/userRef' element={<DataUseRef/>} />
     </Routes>
+
+   
+    
 
    <ShowMoreTextToggle text="This is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the value"></ShowMoreTextToggle>
 

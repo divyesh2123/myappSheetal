@@ -36,7 +36,7 @@ export default function MyMemoSource() {
 
         <button onClick={mySave}>Save</button>
 
-      <MyArray data={data} myDelete={myDelete}></MyArray>
+      <MyArray data={data} ></MyArray>
 
     </div>
   )
