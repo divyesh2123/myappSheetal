@@ -17,6 +17,7 @@ import MyAnotherExample from './MyAnotherExample';
 import MyHome from './MyHome';
 import MyReducerData from './MyReducerData';
 import MyMemoSource from './MyMemoSource';
+import ShowMoreTextToggle from './ShowMoreTextToggle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,6 +40,7 @@ root.render(
     <Route path='/mymemo' element={<MyMemoSource/>} />
     </Routes>
 
+   <ShowMoreTextToggle text="This is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the value"></ShowMoreTextToggle>
 
     </BrowserRouter>
   </React.StrictMode>

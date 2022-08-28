@@ -8,10 +8,4 @@ import React from 'react'
   )
 }
 
-export default React.memo(MyArray,(pre,curr) => {
-    if(pre.data.length == curr.data.length)
-    {
-        return true;
-    }
-
-});
+export default React.memo(MyArray);

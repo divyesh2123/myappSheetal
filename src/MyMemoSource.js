@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useCallback } from 'react'
 import MyArray from './MyArray';
 
 export default function MyMemoSource() {
@@ -15,9 +15,19 @@ export default function MyMemoSource() {
     setData([...data,input])
   }
 
-  const mdelete = ()=> {
 
-  }
+// const myDelete =  useCallback(
+//     () => {
+
+//     },
+//     [data],
+//   )
+  
+// const myDelete = ()=> {
+
+// }
+
+ 
 
   return (
     <div>
@@ -26,7 +36,7 @@ export default function MyMemoSource() {
 
         <button onClick={mySave}>Save</button>
 
-        <MyArray data={data} myDelete={mdelete}></MyArray>
+      <MyArray data={data} myDelete={myDelete}></MyArray>
 
     </div>
   )
