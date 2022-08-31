@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useEffect, useRef} from 'react'
 
 export default function DataUseRef() {
 
@@ -7,6 +7,11 @@ export default function DataUseRef() {
   const myData = ()=> {
     console.log(data.current);
   }
+
+  useEffect(()=> {
+
+      data.current.value = 0;
+  },[])
   return (
     <div>
 

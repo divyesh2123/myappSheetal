@@ -20,9 +20,19 @@ import MyMemoSource from './MyMemoSource';
 import ShowMoreTextToggle from './ShowMoreTextToggle';
 import DataUseRef from './DataUseRef';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Provider } from 'react-redux';
+import store from './store/store';
+import Counter from './Counter';
+import CounterRedux from './CounterRedux';
+import CounterReduxWay2 from './CounterReduxWay2';
+import CounterReduxWay3 from './CounterReduxWay3';
+const root
+ = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
+      
+   
     <BrowserRouter >
     <Link to="/">Default</Link>
     <Link to="/home">Home</Link>
@@ -41,14 +51,20 @@ root.render(
     <Route path='/mymemo' element={<MyMemoSource/>} />
 
     <Route path='/userRef' element={<DataUseRef/>} />
+
+    <Route path='/counter' element={<Counter/>}/>
     </Routes>
 
-   
+
     
 
    <ShowMoreTextToggle text="This is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the valueThis is the value"></ShowMoreTextToggle>
 
+<CounterRedux></CounterRedux>
+<CounterReduxWay2></CounterReduxWay2>
+<CounterReduxWay3></CounterReduxWay3>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
