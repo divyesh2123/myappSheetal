@@ -10,6 +10,7 @@ export default function MyUserImage() {
 
     const data = useSelector(y=>y.userImage);
 
+    console.log("test");
     console.log(data);
 
     useEffect(()=> {
@@ -22,6 +23,13 @@ export default function MyUserImage() {
 
 
   return (
-    <div>MyUserImage</div>
+    <div>{
+
+      data?.data?.map((element,index)=> {
+
+        return (<div key={index}>{element.email}</div>)
+      })
+      
+      }</div>
   )
 }

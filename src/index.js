@@ -19,7 +19,6 @@ import MyReducerData from './MyReducerData';
 import MyMemoSource from './MyMemoSource';
 import ShowMoreTextToggle from './ShowMoreTextToggle';
 import DataUseRef from './DataUseRef';
-
 import { Provider } from 'react-redux';
 import store from './store/store';
 import Counter from './Counter';
@@ -28,10 +27,23 @@ import CounterReduxWay2 from './CounterReduxWay2';
 import CounterReduxWay3 from './CounterReduxWay3';
 import PlaceHolder from './PlaceHolder';
 import MyUserImage from './MyUserImage';
+import ErrorBoundary from './ErrorBoundary';
+import * as Sentry from "@sentry/react";
 const root
  = ReactDOM.createRoot(document.getElementById('root'));
+ Sentry.init({
+  dsn: "https://3021ede5bd19479f84b99216cabc0018@o1196007.ingest.sentry.io/6755104",
+
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
+
 root.render(
   <React.StrictMode>
+    <ErrorBoundary>
     <Provider store={store}>
     <MyUserImage/>
 
@@ -40,7 +52,7 @@ root.render(
     <Link to="/home">Home</Link>
     <Link to="/reducerExample">ReducerExample</Link>
     <Link to="/mymemo">ReducerExample</Link>
-
+  
     <Routes>
 
     <Route path='/' element={<MyTest/>}/>
@@ -56,7 +68,7 @@ root.render(
 
     <Route path='/counter' element={<Counter/>}/>
     </Routes>
-
+   
     
 
 
@@ -70,6 +82,8 @@ root.render(
 <PlaceHolder></PlaceHolder>
     </BrowserRouter>
     </Provider>
+
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
