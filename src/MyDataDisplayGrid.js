@@ -4,6 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import axios from 'axios';
+import ImageCellRender from './ImageCellRender';
 
 export default function MyDataDisplayGrid() {
 
@@ -12,11 +13,11 @@ export default function MyDataDisplayGrid() {
       ]);
     
       const [columnDefs,setColmData] = useState([
-        { field: 'postId' },
+        { field: 'albumId' },
         { field: 'id' },
-        { field: 'name' },
-        { field: 'email' },
-        { field: 'body' }, 
+        { field: 'title' },
+        { field: 'url',  cellRendererFramework: ImageCellRender },
+       
       ]);
 
       const defaultColDef = {
@@ -27,7 +28,7 @@ export default function MyDataDisplayGrid() {
 
       useEffect(()=> {
 
-        axios.get("https://jsonplaceholder.typicode.com/comments")
+        axios.get("https://jsonplaceholder.typicode.com/photos")
         .then(y=> {
           setData(y.data);
         })
