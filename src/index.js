@@ -34,6 +34,12 @@ import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
 import MyHomeReact from './MyHomeReact';
 import MyDataDisplayGrid from './MyDataDisplayGrid';
+import MyTestDataLifeCycle from './MyTestDataLifeCycle';
+import { Container } from './Container';
+import MyHoc from './MyHOC';
+import MyLoginData from './MyLoginData';
+
+const MyHomeReactdata = MyHoc(MyHomeReact)
 const root
  = ReactDOM.createRoot(document.getElementById('root'));
  Sentry.init({
@@ -56,9 +62,13 @@ root.render(
   >
     <Provider store={store}>
    
-   <MyHeader/>
+   {/* <MyHeader/>
 
-   <MyDataDisplayGrid></MyDataDisplayGrid>
+   <MyTestDataLifeCycle data="This is the test data"></MyTestDataLifeCycle> */}
+
+   {/* <MyDataDisplayGrid></MyDataDisplayGrid> */}
+
+
 
     <BrowserRouter >
     {/* <Link to="/">Default</Link>
@@ -68,7 +78,7 @@ root.render(
    */}
     <Routes>
 
-    <Route path='/' element={<MyHomeReact/>}/>
+    <Route path='/' element={<MyHomeReactdata/>}/>
 
     <Route path='/home/:invoiceId' element={<MyHome/>}/>
 
@@ -81,6 +91,7 @@ root.render(
 
     <Route path='/counter' element={<Counter/>}/>
     <Route path='/aggrid' element={<MyDataDisplayGrid/>}/>
+    <Route path='/myLogin' element={<MyLoginData/>}/>
     </Routes>
    
     
@@ -96,7 +107,7 @@ root.render(
 
     </BrowserRouter>
     </Provider>
-    <MyFooter/>
+    
 
     </ErrorBoundary>
     

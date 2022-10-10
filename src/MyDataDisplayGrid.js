@@ -16,7 +16,7 @@ export default function MyDataDisplayGrid() {
         { field: 'albumId' },
         { field: 'id' },
         { field: 'title' },
-        { field: 'url',  cellRendererFramework: ImageCellRender },
+        { field: 'url', cellRendererFramework: ImageCellRender,resizable: true },
        
       ]);
 
@@ -35,7 +35,7 @@ export default function MyDataDisplayGrid() {
 
       },[])
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+    <div className="ag-theme-alpine" style={{ height: 400, width: '100%' }}>
     <AgGridReact rowData={rowData} columnDefs={columnDefs}  defaultColDef={defaultColDef}></AgGridReact>
   </div>
   )
